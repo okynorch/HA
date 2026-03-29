@@ -32,7 +32,7 @@ action:
           - service: light.turn_on
             data:
               brightness: '{{ state_attr(trigger.to_state.entity_id, "brightness") }}'
-              color_temp: >
+              color_temp_kelvin: >
                 {% if trigger.to_state.attributes.color_temp is defined %}
                   {{ trigger.to_state.attributes.color_temp }}
                 {% else %}
